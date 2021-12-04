@@ -17,6 +17,16 @@ function perimetroTriangulo(lado1, lado2, base) {
 function areaTriangulo(base, altura) {
     return (base * altura) / 2;
 }
+function alturaTriangulo(lado1, lado2, base) {
+
+    const resultadoLado = lado1 * lado2;
+    const resultadoBase = (base / 2) * (base / 2);
+    const resultadoAlCuadrado = resultadoLado - resultadoBase;
+
+    const altura = Math.sqrt(resultadoAlCuadrado);
+
+    alert(altura);
+}
 
 // CÓDIGO DEL CÍRCULO
 
@@ -113,4 +123,21 @@ function calcularAreaCirculo() {
     alert(area);
 }
 
+// Calcular altura de triángulo isósceles: dos lados iguales y la base. la altura normalmente se le llama "h". La altura divide el triángulo en dos... convirtiéndolo en un tríangulo rectángulo. Aquí aplicamos pitágoras. hipotenusa(lado) ^2 + = h^2 + base^2.
+
+function calcularAlturaTriangulo() {
+    const inputLado1 = document.getElementById("input-a");
+    const inputLado2 = document.getElementById("input-b");
+    const inputBase = document.getElementById("input-base-isosceles");
+
+    const lado1 = Number(inputLado1.value);
+    const lado2 = Number(inputLado2.value);
+    const base = Number(inputBase.value);
+
+    if (lado1 === lado2) {
+        alturaTriangulo(lado1, lado2, base);
+    } else {
+        alert("Ingrese correctamente las medidas. Recuerde que el triángulo isósceles tiene sus dos lados iguales.");
+    }
+}
 
