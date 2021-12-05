@@ -4,29 +4,40 @@ function calcularPrecioConDescuento(precio, descuento) {
     const precioConDescuento = (precio * porcentajePrecioConDescuento) / 100;
     
     return precioConDescuento;
+
+
 }
 
 function onClickButtonPriceDiscount() {
     const inputPrice = document.getElementById("input-price");
-    const inputDiscount = document.getElementById("input-discount");
+    const inputCupon = document.getElementById("input-cupon");
 
     const price = inputPrice.value;
-    const discount = inputDiscount.value;
-
-    const precioConDescuento = calcularPrecioConDescuento(price, discount);
-
+    const cupon = inputCupon.value;
+    const codigos = ["pedro15", "gutierrez20", "rojas30"];
     const result = document.getElementById("result");
+    let discount;
 
-    result.innerText = "El precio final es: $" + precioConDescuento + " dolares.";
-
+    if (cupon === codigos[0]) {
+        discount = 15;
+        const precioConDescuento = calcularPrecioConDescuento(price, discount);
+        result.innerText = "El precio final es: $" + precioConDescuento + " dolares.";
+    } else if (cupon === codigos[1]) {
+        discount = 20;
+        const precioConDescuento = calcularPrecioConDescuento(price, discount);
+        result.innerText = "El precio final es: $" + precioConDescuento + " dolares.";
+    } else if (cupon === codigos[2]) {
+        discount = 30;
+        const precioConDescuento = calcularPrecioConDescuento(price, discount);
+        result.innerText = "El precio final es: $" + precioConDescuento + " dolares.";
+    } else {
+        result.innerText = "cupón incorrecto";
+    }
 }
 
 
 
-// console.log({
-//     precioOriginal,
-//     descuento,
-//     porcentajePrecioConDescuento,
-//     precioConDescuento
-// });
+
+
+
 
