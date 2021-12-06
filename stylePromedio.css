@@ -1,0 +1,16 @@
+body {
+  background-color: rgb(35, 35, 90);
+  color: white;
+  text-align: center;
+}
+
+input {
+  display: block;
+  margin: 5px auto;
+}
+div {
+  background-color: brown;
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+}
